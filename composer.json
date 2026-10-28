@@ -1,0 +1,21 @@
+{
+  "name": "rzrasel/library-php-rz-sdk-libs",
+  "description": "Library PHP Rz SDK Libs",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2",
+    "ext-openssl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "classmap": [
+      "data-encryption/src/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "data-encryption/tests/"
+    ]
+  }
+}
