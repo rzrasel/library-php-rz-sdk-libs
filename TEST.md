@@ -1,0 +1,15 @@
+- Scan and read all file from: https://github.com/rzrasel/library-php-rz-sdk-libs
+
+- Provide a nice git repository details, repository short description and long description
+- SEO / Packagist Keywords
+- SEO / Packagist Long Description
+- composer instruction
+- composer require rzrasel/library-php-rz-sdk-libs, composer require rzrasel/library-php-rz-sdk-libs:dev-master
+- composer show rzrasel/library-php-rz-sdk-libs -v
+- composer clear-cache, composer clearcache, rm -rf vendor, composer update --no-cache --prefer-source, composer update --no-cache, composer dump-autoload
+- Nice and structured README
+- usages
+- provide full Project Structure in once
+- moder iconize README
+- also follow current README.md
+- Provide full README.md formated text that can just copy and paste

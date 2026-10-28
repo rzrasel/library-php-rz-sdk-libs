@@ -1,0 +1,17 @@
+{
+  "name": "rzrasel/library-php-rz-sdk-libs",
+  "description": "Library PHP Rz SDK Libs",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "RzSDK\\Encryption\\": "rzsdklibs/data-encryption/",
+      "RzSDK\\Database\\": "rzsdklibs/data-database/",
+      "RzSDK\\Validation\\": "rzsdklibs/data-validation/",
+      "RzSDK\\Http\\": "rzsdklibs/data-http/"
+    }
+  }
+}
