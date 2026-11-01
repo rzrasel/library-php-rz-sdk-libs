@@ -1,4 +1,4 @@
-# RzSDK PHP Libraries
+# 🧩 RzSDK PHP Libraries — `rzrasel/library-php-rz-sdk-libs`
 
 **A collection of reusable, modular PHP SDK libraries.**
 
@@ -41,975 +41,448 @@
 }
 ```
 
-
-
----
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Repository Information](#repository-information)
-3. [Features](#features)
-4. [Available Libraries](#available-libraries)
-5. [Requirements](#requirements)
-6. [Installation](#installation)
-7. [Composer Configuration](#composer-configuration)
-8. [Autoloading](#autoloading)
-9. [Usage](#usage)
-10. [Project Structure](#project-structure)
-11. [Development Setup](#development-setup)
-12. [Running Tests](#running-tests)
-13. [Git Workflow](#git-workflow)
-14. [Publishing and Versioning](#publishing-and-versioning)
-15. [Security Considerations](#security-considerations)
-16. [Contributing](#contributing)
-17. [License](#license)
-18. [Author](#author)
-
----
-
-# 1. Introduction
-
-RzSDK PHP Libraries is a modular PHP SDK workspace developed to provide reusable PHP components for different applications and projects.
-
-The repository follows a modular architecture where individual libraries are maintained independently within the same workspace.
-
-Each library can have its own:
-
-- Composer configuration.
-- Source code.
-- Namespace.
-- Documentation.
-- Examples.
-- Unit tests.
-- Dependencies.
-
-The primary objective is to develop reusable PHP libraries that can be integrated into different PHP applications without duplicating common functionality.
-
-### Design Principles
-
-- Modular library architecture.
-- Object-oriented PHP development.
-- Composer package management.
-- PSR-4 autoloading.
-- Namespace-based class organization.
-- Reusable and maintainable components.
-- Independent library development.
-- Extensible SDK structure.
-
----
-
-# 2. Repository Information
-
+> **A collection of reusable, modular PHP SDK libraries — built for modern PHP 8.2+ applications.**
+### 📝 Short Description (for GitHub / Packagist)
+> **RzSDK PHP Libraries Workspace — Modular, reusable PHP SDK providing secure encryption utilities, JWT management, cipher & secret generation for PHP 8.2+ apps.**
+### 📖 Long Description (SEO / Packagist Long Description)
+**RzSDK PHP Libraries Workspace** is an open-source, 【entity-MIT¦canonical_name=MIT】-licensed modular PHP library collection for PHP 8.2+. Built on OOP, PSR-4 autoloading and Composer package management, it provides independent, testable modules.
+The initial `data-encryption` module offers complete JWT authentication flow (`JwtManager`, `TokenPayload`), HMAC algorithm support (`JwtAlgorithmType`: HS256/HS384/HS512), cipher definitions (`CipherType`), encryption types (`EncryptionType`, `TokenType`), IV/digest utilities (`McryptCipherIvGenerator`) and secure secret generation (`SecretGenerator`) using `ext-openssl` and `ext-json`.
+Ideal for APIs, stateless authentication, microservices and secure application communication. Fully documented with examples, autoloading via `vendor/autoload.php`, and ready for Packagist distribution.
+### 🔑 SEO / Packagist Keywords
+```
+php-sdk, php-library, php8, php82, rzsdk, rzrasel, encryption, jwt, json-web-token, openssl, hmac, hs256, hs384, hs512, cipher, secret-generator, security, authentication, api-auth, psr-4, composer-package, reusable-components, modular-php
+```
+### 📦 Packagist / GitHub Details
 | Property | Details |
-|---|---|
-| Repository Name | library-php-rz-sdk-libs |
-| Package Name | rzrasel/library-php-rz-sdk-libs |
-| Organization / Owner | rzrasel |
-| Repository Type | Public Git Repository |
-| Main Branch | master |
-| Language | PHP |
-| Minimum PHP Version | 8.2+ |
-| Package Manager | Composer |
-| License | MIT |
-| Repository Model | Modular PHP Library Workspace |
-
-### Repository Links
-
-- **GitHub:** https://github.com/rzrasel/library-php-rz-sdk-libs
-- **Clone URL:** https://github.com/rzrasel/library-php-rz-sdk-libs.git
-- **Packagist:** https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs
-- **Author:** https://github.com/rzrasel
-
-### Clone Repository
-
+| :--- | :--- |
+| **Package Name** | `rzrasel/library-php-rz-sdk-libs` |
+| **Repository** | `https://github.com/rzrasel/library-php-rz-sdk-libs` |
+| **Clone URL** | `https://github.com/rzrasel/library-php-rz-sdk-libs.git` |
+| **Owner** | [rzrasel](https://github.com/rzrasel) |
+| **Branch** | `master` |
+| **Visibility** | Public |
+| **License** | MIT |
+| **Language** | PHP 8.2+ |
+| **Packagist** | `https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs` |
+| **Type** | Modular PHP Library Workspace |
+| **Autoloading** | PSR-4 `RzSDK\Encryption` |
+---
+## 📚 Table of Contents
+1. [Introduction](#-1-introduction)
+2. [Repository Info](#-2-repository-information)
+3. [Features](#-3-features)
+4. [Available Libraries](#-4-available-libraries)
+5. [Requirements](#-5-requirements)
+6. [Installation](#-6-installation)
+7. [Composer Configuration](#-7-composer-configuration)
+8. [Composer Commands Cheat-Sheet](#-8-composer-commands-cheat-sheet)
+9. [Autoloading](#-9-autoloading)
+10. [Usage](#-10-usage)
+11. [Project Structure](#-11-project-structure)
+12. [Development Setup](#-12-development-setup)
+13. [Running Tests](#-13-running-tests)
+14. [Git Workflow](#-14-git-workflow)
+15. [Publishing & Versioning](#-15-publishing-and-versioning)
+16. [Security](#-16-security-considerations)
+17. [Contributing](#-17-contributing)
+18. [License & Author](#-18-license--author)
+---
+## 📘 1. Introduction
+RzSDK PHP Libraries is a modular SDK workspace to provide reusable PHP components across projects without code duplication.
+Each library has its own:
+- ✅ `composer.json`
+- ✅ `src/` with PSR-4 Namespace
+- ✅ `README.md` + `examples/`
+- ✅ `tests/` (PHPUnit 11)
+- ✅ Independent dependencies
+  **Design Principles:**
+- 🧱 Modular architecture
+- 🧠 Object-oriented PHP
+- 📦 Composer package management
+- 🔄 PSR-4 autoloading
+- 🏷️ Namespace-based organization
+- ♻️ Reusable & maintainable
+---
+## 🗂️ 2. Repository Information
 ```bash
 git clone https://github.com/rzrasel/library-php-rz-sdk-libs.git
-```
-
-Navigate into the repository:
-
-```bash
 cd library-php-rz-sdk-libs
 ```
-
+**Links:**
+- 【entity-GitHub¦canonical_name=GitHub】: https://github.com/rzrasel/library-php-rz-sdk-libs
+- Packagist: https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs
+- Author: https://github.com/rzrasel
 ---
-
-# 3. Features
-
-The workspace currently includes encryption-related utilities and supports further library expansion.
-
+## ✨ 3. Features
 ### Current Capabilities
-
-- JWT token management.
-- JWT algorithm definitions.
-- JWT token payload handling.
-- Encryption type definitions.
-- Cipher type definitions.
-- OpenSSL-related utilities.
-- Secret generation utilities.
-- Reusable PHP components.
-
+- 🔐 JWT token management (`JwtManager`)
+- 📄 JWT payload handling (`TokenPayload`)
+- 🔑 JWT Algorithm definitions (`JwtAlgorithmType`: HS256, HS384, HS512)
+- 🧬 Cipher type definitions (`CipherType`)
+- 🛡️ Encryption type definitions (`EncryptionType`, `TokenType`)
+- 🔢 Secret generation (`SecretGenerator`)
+- 🔀 IV & Digest utilities (`McryptCipherIvGenerator`)
 ### Development Features
-
-- Composer-based dependency management.
-- Modular package organization.
-- Independent library documentation.
-- PHPUnit testing support.
-- Git automation scripts.
-
+- Composer path repository for local dev
+- Independent module docs
+- PHPUnit 11 testing support
+- Git automation scripts
 ---
-
-# 4. Available Libraries
-
-## 4.1 Data Encryption
-
-**Module:** `data-encryption`
-
-**Package:** `rzrasel/library-php-rz-sdk-libs`
-
+## 📦 4. Available Libraries
+### 4.1 `data-encryption`
 **Namespace:** `RzSDK\Encryption`
-
-The Data Encryption module provides reusable encryption and security-related components.
-
-### Components
-
 | Component | Description |
-|---|---|
-| JwtManager | JWT token management |
-| TokenPayload | JWT payload representation |
-| JwtAlgorithmType | JWT signing algorithm definitions |
-| TokenType | Token type definitions |
-| CipherType | Cipher definitions |
-| EncryptionType | Encryption type definitions |
-| McryptCipherIvGenerator | Initialization vector and digest utilities |
-| SecretGenerator | Secret generation utilities |
-
-Additional encryption, password and OpenSSL components are documented in the module-level documentation where implemented.
-
-**Module documentation:**
-
-`data-encryption/README.md`
-
+| :--- | :--- |
+| `JwtManager` | Create, verify & decode JWT tokens |
+| `TokenPayload` | JWT payload representation |
+| `JwtAlgorithmType` | HMAC algorithms HS256/HS384/HS512 |
+| `TokenType` | Token type definitions |
+| `CipherType` | OpenSSL cipher definitions |
+| `EncryptionType` | Encryption mechanism types |
+| `McryptCipherIvGenerator` | IV & digest helpers |
+| `SecretGenerator` | Secure random secret generation |
+Module Docs: `data-encryption/README.md`
 ---
-
-# 5. Requirements
-
+## ⚙️ 5. Requirements
 | Requirement | Version |
-|---|---|
+| :--- | :--- |
 | PHP | 8.2 or higher |
 | Composer | 2.x recommended |
-| OpenSSL Extension | Required |
-| JSON Extension | Required |
+| ext-openssl | Required |
+| ext-json | Required |
 | PHPUnit | 11.x for testing |
-
-### Required PHP Extensions
-
-```text
-ext-openssl
-ext-json
-```
-
-Check PHP version:
-
+Check:
 ```bash
 php -v
+php -m | grep -E "openssl|json"
 ```
-
-Check installed extensions:
-
-```bash
-php -m
-```
-
 ---
-
-# 6. Installation
-
-There are two primary ways to use this repository.
-
-## 6.1 Install through Packagist
-
-Install the library in your existing PHP application:
-
+## 💾 6. Installation
+### 6.1 Via Packagist (recommended)
+**Stable (when tagged):**
 ```bash
 composer require rzrasel/library-php-rz-sdk-libs
 ```
-
-Install the development branch:
-
+**Dev branch (current master):**
 ```bash
 composer require rzrasel/library-php-rz-sdk-libs:dev-master
 ```
-
-Prefer source installation when you need to inspect the package source:
-
+**With source preference (to inspect source):**
 ```bash
 composer require rzrasel/library-php-rz-sdk-libs:dev-master --prefer-source
 ```
-
-Prefer distribution installation:
-
+**With dist preference (faster):**
 ```bash
 composer require rzrasel/library-php-rz-sdk-libs --prefer-dist
 ```
-
-## 6.2 Clone from GitHub
-
-For development or source-code inspection:
-
+### 6.2 Clone from GitHub (for development)
 ```bash
 git clone https://github.com/rzrasel/library-php-rz-sdk-libs.git
-```
-
-Then:
-
-```bash
 cd library-php-rz-sdk-libs
 composer install
 ```
-
----
-
-# 7. Composer Configuration
-
-The repository uses Composer to manage PHP dependencies and class autoloading.
-
-There are two Composer configuration levels:
-
-1. Root workspace `composer.json`.
-2. Individual library `composer.json`.
-
-Each configuration has a different responsibility.
-
-## 7.1 Root Composer Configuration
-
-The root Composer configuration manages the workspace and its local library dependencies.
-
-The workspace uses a local path repository to reference the `data-encryption` module during development.
-
-A typical path repository configuration looks like this:
-
+### 6.3 Using in composer.json directly
+**Simple require:**
 ```json
 {
-    "repositories": [
-        {
-            "type": "path",
-            "url": "data-encryption",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+  "require": {
+    "rzrasel/library-php-rz-sdk-libs": "dev-master"
+  }
 }
 ```
-
-The package name and version constraints must match the actual module's Composer metadata.
-
-## 7.2 Individual Library Composer Configuration
-
-Each library maintains its own Composer configuration.
-
-For example:
-
-```text
-data-encryption/
-    composer.json
+**With VCS repository (if Packagist not updated):**
+```json
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/rzrasel/library-php-rz-sdk-libs"
+    }
+  ],
+  "require": {
+    "rzrasel/library-php-rz-sdk-libs": "dev-master"
+  }
+}
 ```
-
-This configuration defines:
-
-- Package name.
-- Package description.
-- PHP requirements.
-- Dependencies.
-- Autoload configuration.
-- Development dependencies.
-- Testing scripts.
-
-## 7.3 Install Dependencies
-
-From the workspace root:
-
+---
+## 🔧 7. Composer Configuration
+### 7.1 Root Workspace Configuration
+The root `composer.json` uses path repository:
+```json
+{
+  "repositories": [
+    {
+      "type": "path",
+      "url": "data-encryption",
+      "options": { "symlink": true }
+    }
+  ]
+}
+```
+### 7.2 Individual Module Configuration
+Each module `data-encryption/composer.json` defines its own:
+- name, description, PHP requirement
+- PSR-4 autoload: `"RzSDK\\Encryption\\": "src/"`
+- dev dependencies & test scripts
+---
+## 🚀 8. Composer Commands Cheat-Sheet
+#### Install package:
 ```bash
-composer install
+composer require rzrasel/library-php-rz-sdk-libs
+composer require rzrasel/library-php-rz-sdk-libs:dev-master
+composer require rzrasel/library-php-rz-sdk-libs:dev-master --prefer-source
 ```
-
-## 7.4 Clear Composer Cache
-
+#### Show package info (verbose):
+```bash
+composer show rzrasel/library-php-rz-sdk-libs -v
+composer show rzrasel/library-php-rz-sdk-libs --all
+```
+#### Clear cache & clean vendor:
 ```bash
 composer clear-cache
+composer clearcache
+rm -rf vendor
+# Windows PowerShell:
+# Remove-Item -Recurse -Force vendor
 ```
-
-## 7.5 Update Package
-
+#### Update & dump autoload:
 ```bash
-composer update rzrasel/library-php-rz-sdk-libs
-```
-
-## 7.6 Regenerate Autoload Files
-
-```bash
+composer update --no-cache --prefer-source
+composer update --no-cache
+composer update rzrasel/library-php-rz-sdk-libs --prefer-source
+composer update rzrasel/library-php-rz-sdk-libs --prefer-dist
 composer dump-autoload
+composer dump-autoload -o
 ```
-
-## 7.7 Remove Package
-
-From a consumer project:
-
+#### Install all dependencies:
+```bash
+composer install
+composer install --prefer-source
+```
+#### Remove package:
 ```bash
 composer remove rzrasel/library-php-rz-sdk-libs
 ```
-
 ---
-
-# 8. Autoloading
-
-Composer automatically generates the autoload file:
-
-```text
-vendor/autoload.php
-```
-
-This file is generated by Composer. It should not be manually created.
-
-Include it in your application:
-
+## 🔌 9. Autoloading
+Composer generates `vendor/autoload.php`:
 ```php
 <?php
-
 require_once __DIR__ . '/vendor/autoload.php';
-```
-
-Import classes using their existing namespaces.
-
-For example:
-
-```php
 use RzSDK\Encryption\JwtManager;
 use RzSDK\Encryption\TokenPayload;
+use RzSDK\Encryption\JwtAlgorithmType;
+use RzSDK\Encryption\CipherType;
 ```
-
-The existing namespace convention is maintained:
-
-```php
-RzSDK\Encryption
-```
-
-**Important:** The actual PSR-4 mapping must match the source directory and namespace declarations in the individual module's Composer configuration.
-
+PSR-4: `RzSDK\Encryption\` => `src/`
 ---
-
-# 9. Usage
-
-## 9.1 Basic Composer Usage
-
-First, include the Composer autoloader:
-
+## 💡 10. Usage
+### 10.1 Basic Composer Usage
 ```php
 <?php
-
 require_once __DIR__ . '/vendor/autoload.php';
-```
-
-Import the required classes:
-
-```php
 use RzSDK\Encryption\JwtManager;
-use RzSDK\Encryption\TokenPayload;
 ```
-
-You can now use the classes provided by the installed package.
-
-## 9.2 JWT Token Management
-
-JWT stands for JSON Web Token.
-
-JWT tokens are commonly used for:
-
-- User authentication.
-- API authorization.
-- Stateless authentication.
-- Secure application communication.
-- Access token management.
-
-### Example
-
+### 10.2 JWT Token Management
 ```php
 <?php
-
 require_once __DIR__ . '/vendor/autoload.php';
-
 use RzSDK\Encryption\JwtManager;
-
 $secretKey = getenv('APP_JWT_SECRET');
-
 if (!$secretKey) {
-    throw new RuntimeException(
-        'JWT secret is not configured.'
-    );
+    throw new RuntimeException('JWT secret is not configured.');
 }
-
 $jwtManager = new JwtManager($secretKey);
-
 $payload = [
-    'user_id' => 1001,
+    'user_id'  => 1001,
     'username' => 'rzrasel',
-    'iat' => time(),
-    'exp' => time() + 3600
+    'iat'      => time(),
+    'exp'      => time() + 3600
 ];
-
 // Generate token
 $token = $jwtManager->createToken($payload);
-
-echo $token;
+echo $token . PHP_EOL;
+// Verify / Decode (method name per implementation)
+$decoded = $jwtManager->verifyToken($token);
+// or $jwtManager->decodeToken($token);
+print_r($decoded);
 ```
-
-The example illustrates the JWT manager's array-payload usage. Check the current class signature and `TokenPayload` requirements before adapting it to another version.
-
-### JWT Algorithm Types
-
-Import the algorithm enum:
-
+### 10.3 JWT Algorithm Types
 ```php
 use RzSDK\Encryption\JwtAlgorithmType;
+// HS256 => SHA-256
+// HS384 => SHA-384
+// HS512 => SHA-512
+$alg = JwtAlgorithmType::HS256;
+// or $alg = JwtAlgorithmType::from('HS256');
 ```
-
-The library documents the following HMAC algorithm values:
-
 | Algorithm | Hash |
-|---|---|
+| :--- | :--- |
 | HS256 | SHA-256 |
 | HS384 | SHA-384 |
 | HS512 | SHA-512 |
-
-The actual signing algorithm should be explicitly selected and validated according to the JWT implementation.
-
-## 9.3 Cipher Types
-
-Cipher definitions provide information about supported encryption algorithms.
-
-Example:
-
+### 10.4 Cipher Types & Encryption Types
 ```php
 use RzSDK\Encryption\CipherType;
-```
-
-Use the cipher enum values supported by the installed library version.
-
-## 9.4 Encryption Types
-
-Encryption type definitions help identify different encryption mechanisms.
-
-```php
 use RzSDK\Encryption\EncryptionType;
+use RzSDK\Encryption\TokenType;
+$cipher = CipherType::AES_256_CBC; // example enum
+$encType = EncryptionType::OPENSSL;
 ```
-
-## 9.5 Secret Generation
-
-The library also documents secret generation utilities.
-
+### 10.5 Secret Generation
 ```php
 use RzSDK\Encryption\SecretGenerator;
+$secret = SecretGenerator::generate(64); // 64 chars / bytes per impl
+echo $secret;
+$jwtSecret = SecretGenerator::generateJwtSecret(); // if available
 ```
-
-Use the module-level documentation for the exact method signatures and supported options.
-
-## 9.6 Initialization Vector Utilities
-
+### 10.6 IV & Digest Utilities
 ```php
 use RzSDK\Encryption\McryptCipherIvGenerator;
+$iv = McryptCipherIvGenerator::generateIv('aes-256-cbc');
+$digest = McryptCipherIvGenerator::createDigest('sha256', 'my-data');
 ```
-
-This component provides initialization vector and digest-related helper functionality.
-
-### Detailed Examples
-
-For complete examples, class signatures, parameters and return values, refer to:
-
-**[Data Encryption Documentation](data-encryption/README.md)**
-
+### 10.7 Using TokenPayload Object
+```php
+use RzSDK\Encryption\TokenPayload;
+$payloadObj = new TokenPayload([
+    'sub' => '1234567890',
+    'name' => 'Rasel',
+    'admin' => true
+]);
+$token = $jwtManager->createToken($payloadObj->toArray());
+```
+> **Note:** Always check current class signatures in `data-encryption/src/` and module README for exact method names.
 ---
-
-# 10. Project Structure
-
-The repository follows a modular workspace architecture.
-
-Each library is organized independently inside its own directory.
-
-## 10.1 Repository Root Structure
-
-```text
+## 🏗️ 11. Project Structure
+### Full Repository Structure (at once)
+```
 library-php-rz-sdk-libs/
 ├── .gitignore
-├── composer.json
-├── composer-v1.0.0.json
-├── README.md
-├── Git Auto Commit All - v-1.1.3.bat
-├── Git Auto Commit All - v-1.1.3.command
-├── Git Bash - v-1.1.3.sh
-└── data-encryption/
-    │
-    ├── composer.json
-    ├── README.md
+├── composer.json                         # Root workspace composer (path repo to data-encryption)
+├── composer-v1.0.0.json                  # Historical v1.0.0 composer snapshot
+├── README.md                             # Main workspace documentation
+├── TEST.md
+├── Git Auto Commit All - v-1.1.3.bat     # Windows git automation
+├── Git Auto Commit All - v-1.1.3.command # macOS git automation
+├── Git Bash - v-1.1.3.sh                 # Bash git automation
+│
+└── data-encryption/                      # Module: Data Encryption
+    ├── composer.json                     # Module composer (package name: rzrasel/library-php-rz-sdk-libs)
+    ├── README.md                         # Module-level documentation
     ├── phpunit.xml
     ├── src/
     │   ├── JwtManager/
-    │   │   ├── Type/
-    │   │   └── Utils/
-    ├── tests/
+    │   │   ├── JwtManager.php            # JWT create/verify/decode
+    │   │   └── TokenPayload.php          # Payload DTO
+    │   ├── Type/
+    │   │   ├── CipherType.php
+    │   │   ├── EncryptionType.php
+    │   │   ├── JwtAlgorithmType.php
+    │   │   └── TokenType.php
+    │   └── Utils/
+    │       ├── McryptCipherIvGenerator.php
+    │       └── SecretGenerator.php
+    ├── tests/                            # PHPUnit tests
+    │   └── ...
     └── examples/
         └── jwt-example.php
 ```
-
-The structure above represents the workspace and source organization documented in the repository. See the module-level README for its detailed class listing.
-
-## 10.2 Data Encryption Source Structure
-
-The repository README documents the following source files:
-
-```text
-data-encryption/
-├── composer.json
-├── src/
-│   │
-│   ├── JwtManager/
-│   │   ├── JwtManager.php
-│   │   └── TokenPayload.php
-│   ├── Type/
-│   │   ├── CipherType.php
-│   │   ├── EncryptionType.php
-│   │   ├── JwtAlgorithmType.php
-│   │   └── TokenType.php
-│   └── Utils/
-│       ├── McryptCipherIvGenerator.php
-│       └── SecretGenerator.php
-└── examples/
-    └── jwt-example.php
+### Future Expansion Design
 ```
-
-The workspace README also contains an alternative organization using `Types/`, `OpensslEncryption/`, and `PasswordEncryption/`. Verify the current module tree before using that alternative layout as a literal directory inventory.
-
-## 10.3 Root File Description
-
-| File | Description |
-|---|---|
-| `.gitignore` | Git ignored files and directories |
-| `composer.json` | Root workspace Composer configuration |
-| `composer-v1.0.0.json` | Historical Composer configuration |
-| `README.md` | Main workspace documentation |
-| `Git Auto Commit All - v-1.1.3.bat` | Windows Git automation |
-| `Git Auto Commit All - v-1.1.3.command` | macOS Git automation |
-| `Git Bash - v-1.1.3.sh` | Shell-based Git automation |
-
-## 10.4 Future Library Expansion
-
-The workspace is designed to accommodate additional independent libraries.
-
-For example:
-
-```text
 library-php-rz-sdk-libs/
 ├── data-encryption/
-├── database/
-├── validation/
-├── http-client/
-├── file-manager/
+├── database/         # future
+├── validation/       # future
+├── http-client/      # future
+├── file-manager/     # future
 └── ...
 ```
-
-These are proposed future modules, not a claim that all currently exist in the repository.
-
-Each module should maintain its own:
-
-```text
-library-name/
-├── composer.json
-├── README.md
-├── src/
-├── tests/
-└── examples/
-```
-
+Each future module follows same standard: `composer.json`, `README.md`, `src/`, `tests/`, `examples/`.
 ---
-
-# 11. Development Setup
-
-## 11.1 Clone Repository
-
+## 👨‍💻 12. Development Setup
 ```bash
 git clone https://github.com/rzrasel/library-php-rz-sdk-libs.git
-```
-
-## 11.2 Navigate to Repository
-
-```bash
 cd library-php-rz-sdk-libs
-```
-
-## 11.3 Install Workspace Dependencies
-
-```bash
+# Install workspace deps
 composer install
-```
-
-## 11.4 Install Module Dependencies
-
-```bash
+# Install module deps
 cd data-encryption
 composer install
-```
-
-## 11.5 Regenerate Autoload
-
-```bash
+# Back to root and dump autoload
+cd ..
 composer dump-autoload
 ```
-
 ---
-
-# 12. Running Tests
-
-The Data Encryption module documents PHPUnit 11 support.
-
-From the module directory:
-
+## 🧪 13. Running Tests
 ```bash
 cd data-encryption
-```
-
-Install development dependencies:
-
-```bash
 composer install
-```
-
-Run tests using the configured Composer script:
-
-```bash
 composer test
-```
-
-Alternatively, from the workspace root:
-
-```bash
+# or
+vendor/bin/phpunit -c phpunit.xml
+# From workspace root:
 vendor/bin/phpunit -c data-encryption/phpunit.xml
 ```
-
-Tests verify implemented behavior. Passing tests do not constitute a cryptographic security audit.
-
 ---
-
-# 13. Git Workflow
-
-The repository includes Git automation scripts for different operating systems.
-
+## 🌿 14. Git Workflow
 | Script | Platform |
-|---|---|
-| Git Auto Commit All - v-1.1.3.bat | Windows |
-| Git Auto Commit All - v-1.1.3.command | macOS |
-| Git Bash - v-1.1.3.sh | Bash-compatible environments |
-
-### Basic Git Commands
-
-Check repository status:
-
+| :--- | :--- |
+| `Git Auto Commit All - v-1.1.3.bat` | Windows |
+| `Git Auto Commit All - v-1.1.3.command` | macOS |
+| `Git Bash - v-1.1.3.sh` | Bash |
+Basic commands:
 ```bash
 git status
-```
-
-Add changes:
-
-```bash
 git add .
-```
-
-Commit changes:
-
-```bash
-git commit -m "Update PHP libraries"
-```
-
-Pull changes:
-
-```bash
+git commit -m "feat: add encryption utils"
 git pull
-```
-
-Push changes:
-
-```bash
 git push
 ```
-
-### Git Automation
-
-The Windows and macOS automation scripts prompt for a commit message, append a timestamp, stage changes, commit, pull and push.
-
-Review the scripts before execution and ensure your working tree and remote branch are in a suitable state.
-
+Automation scripts prompt for commit message + timestamp, then stage/commit/pull/push.
 ---
-
-# 14. Publishing and Versioning
-
-The project can use Git tags to identify stable releases.
-
-### Create a Version Tag
-
+## 🏷️ 15. Publishing and Versioning
 ```bash
+# Create annotated tag
 git tag -a v1.0.0 -m "Initial stable release"
-```
-
-Push the tag:
-
-```bash
 git push origin v1.0.0
-```
-
-### View Tags
-
-```bash
+# View tags
 git tag
-```
-
-### Install a Tagged Version
-
-After publishing the corresponding Composer-compatible release:
-
-```bash
+# Install tagged version in project
 composer require rzrasel/library-php-rz-sdk-libs:^1.0
 ```
-
-### Development Version
-
+Dev version always:
 ```bash
 composer require rzrasel/library-php-rz-sdk-libs:dev-master
 ```
-
-For a workspace containing independently versioned modules, consider publishing each module as a separate Composer package when independent installation and versioning are required.
-
 ---
-
-# 15. Security Considerations
-
-Security is particularly important for encryption and authentication libraries.
-
-Recommendations:
-
-- Never hardcode production secrets.
-- Use secure environment variables or a secret manager.
-- Use strong cryptographic keys.
-- Never store plaintext passwords.
-- Use password hashing for password storage.
-- Validate JWT signatures before trusting token claims.
-- Enforce JWT expiration, issuer and audience validation.
-- Use authenticated encryption for sensitive data.
-- Keep PHP and OpenSSL updated.
-- Review cryptographic implementations before production deployment.
-
-**Security disclaimer:** This repository provides reusable PHP utilities. The existence of encryption methods or passing unit tests does not guarantee that an implementation is secure against all attacks.
-
+## 🔒 16. Security Considerations
+- Never hardcode secrets — use env `APP_JWT_SECRET`
+- Use strong keys (256-bit+)
+- Validate JWT signature, exp, iss, aud before trusting claims
+- Use authenticated encryption (AES-GCM/CBC + HMAC)
+- Keep PHP & OpenSSL updated
+- This lib provides utilities; passing tests ≠ security audit. Review before production.
 ---
-
-# 16. Contributing
-
-Contributions and suggestions are welcome.
-
-### Contribution Process
-
-1. Fork the repository.
-2. Clone your fork.
-3. Create a feature branch.
-4. Implement your changes.
-5. Add or update tests.
-6. Update documentation.
-7. Commit your changes.
-8. Push your branch.
-9. Submit a pull request.
-
-### Development Guidelines
-
-- Follow existing PHP namespace conventions.
-- Maintain independent library modules.
-- Use Composer-compatible autoloading.
-- Keep source code organized.
-- Provide practical usage examples.
-- Include appropriate tests.
-- Update module documentation when adding features.
-
+## 🤝 17. Contributing
+1. Fork repo
+2. Clone fork
+3. Create feature branch `feat/your-feature`
+4. Implement + add tests
+5. Update docs
+6. Commit & push
+7. Submit PR
+   Guidelines:
+- Follow `RzSDK\Encryption` namespace
+- Keep modules independent
+- Use PSR-4 & Composer autoloading
+- Provide usage examples
 ---
-
-# 17. License
-
-This project is distributed under the MIT License.
-
-See the [LICENSE](LICENSE) file for details.
-
+## 📜 18. License & Author
+**License:** MIT — See [LICENSE](LICENSE) file.
+**Author:** **Rz Rasel**
+- GitHub: https://github.com/rzrasel
+- Repo: https://github.com/rzrasel/library-php-rz-sdk-libs
+- Packagist: https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs
 ---
-
-# 18. Author
-
-**Rz Rasel**
-
-GitHub:
-
-https://github.com/rzrasel
-
-Repository:
-
-https://github.com/rzrasel/library-php-rz-sdk-libs
-
-Packagist:
-
-https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs
-
----
-
-**RzSDK PHP Libraries**
-
-*Reusable PHP Components. Modular Architecture. Simplified Development.*
-
-
-
-
-
-
-
-
-
-
-
-
-old README instruction
-
-
-# RzSDK PHP Libraries Workspace
-
-Library PHP Rz SDK Libs - Secure encryption utilities for PHP 8.2+
-
-## Requirements
-
-- PHP 8.2+
-- ext-openssl
-- ext-json
-- Composer
-
-## Installation
-
-```bash
-composer require rzrasel/library-php-rz-sdk-libs
-```
-
-```bash
-composer require rzrasel/library-php-rz-sdk-libs:dev-master
-```
-
-```bash
-composer require rzrasel/library-php-rz-sdk-libs:dev-master --prefer-source
-```
-
-```text
-library-php-rz-sdk-libs/
-├── composer.json
-└── data-encryption/
-├── composer.json
-├── src/
-│   ├── JwtManager/
-│   │   ├── JwtManager.php
-│   │   └── TokenPayload.php
-│   ├── Type/
-│   │   ├── CipherType.php
-│   │   ├── EncryptionType.php
-│   │   ├── JwtAlgorithmType.php
-│   │   └── TokenType.php
-│   └── Utils/
-│       ├── McryptCipherIvGenerator.php
-│       └── SecretGenerator.php
-└── examples/
-└── jwt-example.php
-```
-
-# RzSDK PHP Libraries Workspace
-
-This is a workspace containing independently structured RzSDK PHP libraries. Existing library source code is preserved as supplied; the `tests/` directory and detailed usage guide are additions.
-
-https://packagist.org/packages/rzrasel/library-php-rz-sdk-libs
-
-composer init -n
-composer clear-cache
-composer require rzrasel/library-php-rz-sdk-libs --prefer-dist
-composer update rzrasel/library-php-rz-sdk-libs --prefer-source
-
-composer dump-autoload
-
-composer require rzrasel/library-php-rz-sdk-libs
-
-composer remove rzrasel/library-php-rz-sdk-libs
-composer clear-cache
-composer require rzrasel/library-php-rz-sdk-libs:dev-master
-
-## Structure
-
-```text
-library-php-rz-sdk-libs/
-├── composer.json
-└── data-encryption/
-    ├── composer.json
-    ├── src/
-    │   ├── Types/
-    │   ├── JwtManager/
-    │   ├── OpensslEncryption/
-    │   └── PasswordEncryption/
-    ├── tests/
-    └── examples/
-```
-
-## Requirements
-
-- PHP 8.2+
-- OpenSSL and JSON PHP extensions
-- Composer
-- PHPUnit 11 for running the tests
-
-## Install workspace dependencies
-
-From the `rzsdklibs/` workspace root:
-
-```bash
-composer install
-```
-
-Composer generates `vendor/autoload.php`. The local path repository links the `data-encryption` package into the workspace.
-
-## Run tests
-
-From `rzsdklibs/data-encryption/`:
-
-```bash
-composer install
-composer test
-```
-
-Or, from the workspace root after dependencies have been installed:
-
-```bash
-vendor/bin/phpunit -c data-encryption/phpunit.xml
-```
-
-## Use the library in an application
-
-If the package is installed through Composer, include the generated autoloader:
-
-```php
-require __DIR__ . '/vendor/autoload.php';
-```
-
-Then import the classes under the existing `RzSDK\\Encryption` namespace. See `data-encryption/README.md` for detailed examples.
-
-## GitHub publishing
-
-For the simplest standalone Composer package, publish `data-encryption/` as its own GitHub repository. If publishing the whole workspace as one repository, users can use the local path repository for development, or configure the package repository appropriately for deployment. A GitHub organization itself is not a Composer repository root.
-
-## Scope note
-
-This deliverable does not rewrite the existing encryption classes. The added tests exercise their current documented behavior. Tests are not a security audit, and passing tests do not establish production security.
+> **RzSDK PHP Libraries** — *Reusable PHP Components. Modular Architecture. Simplified Development.* 🚀

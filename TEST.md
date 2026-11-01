@@ -3,6 +3,7 @@
 - Provide a nice git repository details, repository short description and long description
 - SEO / Packagist Keywords
 - SEO / Packagist Long Description
+- Installation composer.json
 - composer instruction
 - composer require rzrasel/library-php-rz-sdk-libs, composer require rzrasel/library-php-rz-sdk-libs:dev-master
 - composer show rzrasel/library-php-rz-sdk-libs -v
